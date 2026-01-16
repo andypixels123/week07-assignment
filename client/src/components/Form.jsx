@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from 'react-router';
 
+
+
 function Form() {
   const [formValues, setFormValues] = useState({
     userName: "",
@@ -10,11 +12,10 @@ function Form() {
   function handleSubmit(e) {
     e.preventDefault();
     console.log("The form values are", formValues);
-    // ! POST FORM DATA TO SERVER, SERVER TO DB
-    // TODO: CHANGE TO RENDER 'SERVER URL' WHEN DEPLOYED
+    // todo: change to render 'server url' for deployment
     try {
-      fetch("http://localhost:8080/addcomms", {// localhost
-        // fetch("https://week04-assignment-1-j3wt.onrender.com/addcomms", {// mk2
+      fetch("http://localhost:8080/addcomms", {
+        // fetch("https://week07-assignment-jzhp.onrender.com.com/addcomms", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

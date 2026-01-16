@@ -7,12 +7,13 @@ import cors from "cors";
 import { db } from "./dbConn.js";
 
 const app = express();
-app.use(cors());
 app.use(express.json());
+app.use(cors());
 const PORT = 8080;
 
 // ! from week 4 guestbook assignment ///////////////////////////////////////////
 // todo: create data using formValues from client, send to database
+
 app.post("/addcomms", (req, res) => {
     try {
         const newComm = req.body.formValues;

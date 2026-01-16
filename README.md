@@ -61,7 +61,7 @@ Let’s deploy the server so we can change over any client-side fetch links to t
     Click ‘+ New’ and choose ‘Web Service’.
     If you haven’t already, connect your GitHub repositories to Render. Select the intended project and click ‘Connect →’.
     Now, we should see a page with a few sections. Here’s what we need for the server side:
-        Root Directory: server (or whatever you named the server)
+        Root Directory: server (or whatever it has been named in your project)
         Build Command: npm i
         Start Command: node server
         Environment variables: add anything in your server-side .env file in here.
@@ -85,6 +85,7 @@ Render
     Click ‘+ New’ and choose ‘Static Site’.
     Select the same project and click ‘Connect →’.
     Here is what we need on the options page:
+        Root Directory: client (or whatever it has been named in your project)
         Build Command: npm install && npm run build (or npm install; npm run build, as should be pre-filled in for you)
         Publish directory: dist
         Environment variables: add anything in your client-side .env file in here.
