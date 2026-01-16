@@ -1,0 +1,3 @@
+-- Schema visualiser screenshot
+-- SQL queries from your editor on Supabase
+-- this is just for reference

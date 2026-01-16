@@ -9,14 +9,29 @@ function Form() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // todo: send form values to server --> post to db 
     console.log("The form values are", formValues);
+    // ! POST FORM DATA TO SERVER, SERVER TO DB
+    // TODO: CHANGE TO RENDER 'SERVER URL' WHEN DEPLOYED
+    try {
+      fetch("http://localhost:8080/addcomms", {// localhost
+        // fetch("https://week04-assignment-1-j3wt.onrender.com/addcomms", {// mk2
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ formValues })
+      });
+    } catch (fish) {
+      console.error(fish);
+    }
   }
 
   function handleInputChange(e) {
+    console.log(formValues);
     setFormValues({
       ...formValues, [e.target.name]: e.target.value
     });
+    // console.log(formValues);
   }
 
   return (

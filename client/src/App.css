@@ -210,7 +210,7 @@
  /* Button styling from W3 schools, modified slightly */
  /* Added scroll-behaviour: smooth; in css instead of using W3 Schools 'scroll to top' function */
  #topBtn {
-     display: none;
+     /* display: none; */
      position: fixed;
      bottom: 20px;
      right: 30px;
