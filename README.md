@@ -114,7 +114,6 @@ Stretch Requirements
     🏹 Add ‘like’ functionality on posts.
     🏹 Create additional SQL queries to show filtered posts.
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 REFLECTION
 
@@ -144,3 +143,10 @@ How to send your database schema:
     Then, go to ‘Schema Visualiser’.
     Take a screenshot of the tables you’ve used and save it in your files.
     On Moodle, in your submission, click the image icon and follow the instructions.
+
+
+////////////////////////////////////////////////////////////////////////////////
+ Failed to deploy server
+ Render deployment error
+
+ ==> Application exited early

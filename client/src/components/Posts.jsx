@@ -2,6 +2,19 @@ import { Link } from "react-router"
 
 function Posts() {
     // todo: get comments from db .map?? to produce html?
+
+    try {
+        fetch("http://localhost:8080/getcomms", {
+            method: "GET",
+            headers: {},
+            body: JSON.stringify(),
+        });
+    } catch (error) {
+        console.error(error);
+    }
+
+
+    //! likes ////////////////////////////////////
     // likeCount++;
     // p2.innerText = likeCount;// show likes on page
     // let commLikes = {

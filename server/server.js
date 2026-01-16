@@ -13,20 +13,20 @@ const PORT = 8080;
 
 // ! from week 4 guestbook assignment ///////////////////////////////////////////
 // todo: create data using formValues from client, send to database
-// app.post("/addcomms", (req, res) => {
-//     try {
-//         const newComm = req.body.formValues;
-//         // console.log(newComm);
-//         const query = db.query(
-//             `INSERT INTO gbComms (username, comment, date) VALUES ($1, $2, $3)`,
-//             [newComm.userName, newComm.userComment, newComm.date]
-//         );
-//         res.status(200).json({ request: "success" });
-//     } catch (error) {
-//         console.error(error, "Request failed");
-//         res.status(500).json({ request: "fail" });
-//     }
-// });
+app.post("/addcomms", (req, res) => {
+    try {
+        const newComm = req.body.formValues;
+        // console.log(newComm);
+        const query = db.query(
+            `INSERT INTO gbComms (username, comment, date) VALUES ($1, $2, $3)`,
+            [newComm.userName, newComm.userComment, newComm.date]
+        );
+        res.status(200).json({ request: "success" });
+    } catch (error) {
+        console.error(error, "Request failed");
+        res.status(500).json({ request: "fail" });
+    }
+});
 
 // todo: get data from database, send to client
 app.get("/getcomms", async function (req, res) {
@@ -54,9 +54,11 @@ app.get("/getcomms", async function (req, res) {
 //     }
 // });
 
-// app.listen(PORT, () => {
-//     console.info(`Server running, port ${PORT}`);
-// });
+// In Express.js, the app.listen() function is used to start a server and make it listen for incoming requests on a specified port and host. This method is essential for running an Express application as it enables the server to handle HTTP requests from clients (like browsers).
+
+app.listen(PORT, () => {
+    console.info(`Server running, port ${PORT}`);
+});
 
 //! from demo //////////////////////////////////////////////////
 // routing system
