@@ -150,3 +150,6 @@ How to send your database schema:
  Render deployment error
 
  ==> Application exited early
+ caused by app.listen() being commented out by mistake!!
+
+ Required <HashLink> for return to top button to function using id="#top" also used on links without routes.
