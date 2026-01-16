@@ -55,8 +55,7 @@ This week we need to deploy our React app and our server separately, much like h
 
 The following is for deploying a mono-repo, meaning both the client and the server files are in one folder together. If you’ve not made a mono-repo, the deployment instructions are the same, except you don’t have to alter the ‘root directory’.
 
-Deploying the Server
-
+<Deploying the Server>
 Let’s deploy the server so we can change over any client-side fetch links to the correct URL before we deploy it. First, ensure that everything is pushed to GitHub.
 
     Click ‘+ New’ and choose ‘Web Service’.
@@ -69,8 +68,7 @@ Let’s deploy the server so we can change over any client-side fetch links to t
     Now, you can ‘Deploy Web Service’!
     Check your server is working as expected, and make sure to change any localhost links in your client-side code for the render server URL.
 
-Deploying the Client
-
+<Deploying the Client>
 Ensure that everything is pushed to GitHub. You can use either Render or Vercel to deploy your client and Render to deploy your server.
 Vercel
 
@@ -153,3 +151,7 @@ How to send your database schema:
  caused by app.listen() being commented out by mistake!!
 
  Required <HashLink> for return to top button to function using id="#top" also used on links without routes.
+
+ Render Client deployment failed
+ removed package-lock.json, ran npm i, npm update
+ re-deployed
