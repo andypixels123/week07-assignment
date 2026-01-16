@@ -54,6 +54,7 @@ How to Deploy
 This week we need to deploy our React app and our server separately, much like how we did it in week 4, but with some slightly different steps.
 
 The following is for deploying a mono-repo, meaning both the client and the server files are in one folder together. If you’ve not made a mono-repo, the deployment instructions are the same, except you don’t have to alter the ‘root directory’.
+
 Deploying the Server
 
 Let’s deploy the server so we can change over any client-side fetch links to the correct URL before we deploy it. First, ensure that everything is pushed to GitHub.
@@ -62,6 +63,7 @@ Let’s deploy the server so we can change over any client-side fetch links to t
     If you haven’t already, connect your GitHub repositories to Render. Select the intended project and click ‘Connect →’.
     Now, we should see a page with a few sections. Here’s what we need for the server side:
         Root Directory: server (or whatever you named the server)
+        Build Command: npm i
         Start Command: node server
         Environment variables: add anything in your server-side .env file in here.
     Now, you can ‘Deploy Web Service’!
