@@ -21,8 +21,9 @@ function Form() {
         },
         body: JSON.stringify({ formValues })
       });
-    } catch (fish) {
-      console.error(fish);
+      console.log("success");
+    } catch (error) {
+      console.error(error);
     }
   }
 
