@@ -6,11 +6,7 @@ function Home() {
     return (
         <>
             <main>
-
-                <Link to="/form">guestbook form</Link>&nbsp;|&nbsp;
-                <Link to="/posts">guestbook comments</Link>
-
-
+                <nav><Link to="/posts" className="round" title="guestbook">guestbook</Link></nav>
                 <h2>HOME</h2>
                 <section>
                     <div className="item round">
@@ -23,7 +19,7 @@ function Home() {
                 </section>
                 <section>
                     <div className="item round">
-                        <h2>I Don't Believe You</h2>
+                        <h3>I Don't Believe You</h3>
                         <img className="round" src="/pigs-might-fly.webp" width="300" height="304" alt="flying pig graphic" />
                         <p className="item-txt">...nothing is something??</p>
                         <HashLink className="btn round" to="#top">prove it!</HashLink>
@@ -31,7 +27,7 @@ function Home() {
                 </section>
                 <section>
                     <div className="item round">
-                        <h2>When Flying Pigs Fall</h2>
+                        <h3>When Flying Pigs Fall</h3>
                         <img className="round" src="/pigs-might-fly.webp" width="300" height="304" alt="flying pig graphic" />
                         <p className="item-txt">...flying for beginners</p>
                         <HashLink className="btn round" to="#top">wings</HashLink>
@@ -39,7 +35,7 @@ function Home() {
                 </section>
                 <section>
                     <div className="item round">
-                        <h2>Pig Fodder</h2>
+                        <h3>Pig Fodder</h3>
                         <img className="round" src="/pigs-might-fly.webp" width="300" height="304" alt="flying pig graphic" />
                         <p className="item-txt">...food for thought</p>
                         <HashLink className="btn round" to="#top">fuel</HashLink>
@@ -47,7 +43,7 @@ function Home() {
                 </section>
                 <section>
                     <div className="item round">
-                        <h2>Alternative Travel</h2>
+                        <h3>Alternative Travel</h3>
                         <img className="round" src="/pigs-might-fly.webp" width="300" height="304" alt="flying pig graphic" />
                         <p className="item-txt">...making notes</p>
                         <HashLink className="btn round" to="#top">bus</HashLink>

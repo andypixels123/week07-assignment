@@ -113,7 +113,7 @@ Stretch Requirements
     🏹 Add ‘like’ functionality on posts.
     🏹 Create additional SQL queries to show filtered posts.
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 REFLECTION
 
 Please also provide an assignment reflection in your project README.md file.
@@ -143,20 +143,25 @@ How to send your database schema:
     Take a screenshot of the tables you’ve used and save it in your files.
     On Moodle, in your submission, click the image icon and follow the instructions.
 
-////////////////////////////////////////////////////////////////////////////////
-I had issues with deploying to Render, partly due to errors in the Moodle deployment instructions which were later updated.
-Render deployment error
-Failed to deploy server ==> Application exited early
-caused by app.listen() being commented out in my code by mistake!!
+================================================================================
+MY REFLECTION ==================================================================
+================================================================================
 
-Render Client deployment failed
-Removed package-lock.json, package.json and node_modules, ran npm i again, and npm update and successfully re-deployed.
+I made use of my week 4 guestbook assignment as a template and modified all code into a React app. The database table was already populated with rows of data. The posts data was originally produced using Google AI to create generic website user comments.
+
+I had issues with deploying to Render, partly due to errors in the Moodle deployment instructions which were later updated.
+I made several attempts before it worked.
+Render deployment error - Failed to deploy server, ==> Application exited early
+This was caused by app.listen() being commented out in my code, by mistake!!
+
+Render Client deployment also failed a number of times.
+I Googled for a solution and also with the help of Manny I needed to remove package-lock.json, package.json and node_modules. I ran 'npm install' again, and 'npm update' and successfully re-deployed.
 
 
 References
 ------------
 React Documentation -
-Researched and utilized <HashLink> for return to top button to function using id="#top" also used on page links without routes. Researched and utilized <Fragment> to add a unique key to a group of elements.
+Researched and utilized <HashLink> for return to top button to function using id="#top" also used on page links without routes. Researched and utilized <Fragment> to add a unique key to a group of elements which was necessary when using map().
 
 YouTube -
-Tutorial on useEffect and adding custom error messages to html in React.
+I watched a tutorial about useEffect and adding custom error messages to html in React.

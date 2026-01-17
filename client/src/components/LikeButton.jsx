@@ -15,7 +15,7 @@ const LikeButton = ({ initialLikes, postId }) => {
 
             // todo: change to render 'server url' for deployment
             // fetch("http://localhost:8080/likes", {//localhost
-            // fetch("https://week04-assignment-1-j3wt.onrender.com/likes", {// mk2
+            // fetch("https://week07-assignment-jzhp.onrender.com", {
 
             await fetch(`http://localhost:8080/likes/${postId}`, {
                 method: "POST",
@@ -24,7 +24,7 @@ const LikeButton = ({ initialLikes, postId }) => {
                 },
             });
         } catch (error) {
-            console.error("sync error: ", error);
+            console.error(error);
             setLikes(originalLikes);
         } finally {
             setHasLiked(false);

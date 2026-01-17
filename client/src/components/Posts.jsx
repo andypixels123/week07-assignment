@@ -1,6 +1,6 @@
 import { useEffect, useState, Fragment } from "react";
 import LikeButton from "./LikeButton";
-// import { Link } from "react-router"
+import { Link } from "react-router"
 
 function Posts() {
     const [comms, setComms] = useState([]);
@@ -15,7 +15,6 @@ function Posts() {
                 // "https://week07-assignment-jzhp.onrender.com.com/getcomms"
                 // );
                 const commData = await response.json();
-                // console.log(commData);
                 setComms(commData);
             }
             getPosts();
@@ -25,45 +24,9 @@ function Posts() {
         }
     }, []);
 
-    // todo: =====================================
-    //! add likes ////////////////////////////////////
-    // likeCount++;
-    // p2.innerText = likeCount;// show likes on page
-    // let commLikes = {
-    //   likeId: commId,
-    //   likeQty: likeCount
-    // };
-    // todo: change to render 'server url' for deployment
-    // fetch("http://localhost:8080/likes", {//localhost
-    // fetch("https://week04-assignment-1-j3wt.onrender.com/likes", {// mk2
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json"
-    //   },
-    //   body: JSON.stringify({ commLikes })
-    // });
-
-    // comm.comment
-    // comm.date
-    // comm.idx
-    // comm.likes
-    // comm.username
-
-    // <article>
-    //     <h3>username</h3>
-    //     <p>comment</p>
-    //     <div>
-    //         <span>
-    //             <img src="likes-icon.png" />
-    //             <p>like count</p>
-    //         </span>
-    //         <p>Date / #2</p>
-    //     </div>
-    // </article>
-
-    // todo: build comments html + like buttons
     return (
         <main>
+            <nav><Link to="/form" className="round" title="post a comment">post comment</Link></nav>
             <h2>GUESTBOOK</h2>
             <section id="guestbookComms">
                 {
@@ -71,13 +34,13 @@ function Posts() {
                         return (
                             <Fragment key={comm.idx}>
                                 <article>
-                                    <h3>{comm.username}</h3>
+                                    <p>{comm.username}</p>
                                     <p>{comm.comment}</p>
                                     <div>
                                         {/* <span> */}
-                                            <LikeButton initialLikes={comm.likes} postId={comm.idx} />
-                                            {/* <img src="like-icon.png" alt="like-icon" /> */}
-                                            {/* <p>{comm.likes}</p> */}
+                                        <LikeButton initialLikes={comm.likes} postId={comm.idx} />
+                                        {/* <img src="like-icon.png" alt="like-icon" /> */}
+                                        {/* <p>{comm.likes}</p> */}
                                         {/* </span> */}
                                         <p>{comm.date} / #{comm.idx}</p>
                                     </div>

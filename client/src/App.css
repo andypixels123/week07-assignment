@@ -34,7 +34,8 @@
  }
 
  h1,
- h2 {
+ h2,
+ h3 {
      letter-spacing: 3px;
  }
 
@@ -48,6 +49,10 @@
      margin: 60px 0 30px 0;
  }
 
+ h3 {
+     font-size: 2rem;
+ }
+
  a {
      color: #444;
      transition: 0.8s;
@@ -56,6 +61,12 @@
  p {
      line-height: 150%;
      padding: 10px;
+ }
+
+ article p:first-child {
+     font-size: 135%;
+     font-weight: bold;
+     padding: 0;
  }
 
  img {
@@ -114,8 +125,13 @@
      margin-bottom: 50px;
  }
 
- header a:hover {
+ header a:hover,
+ main nav a:hover {
      text-decoration: underline;
+ }
+
+ main nav a {
+     margin: 0 0 0 30px;
  }
 
  footer a,
@@ -138,13 +154,36 @@
      border-bottom: 1px solid #ddd;
  }
 
+ .item {
+     position: relative;
+     width: 50%;
+     margin: 5% auto;
+     padding: 3% 2% 2% 2%;
+     box-shadow: 0 0 35px #555;
+ }
+
+ .item img {
+     max-width: 400px;
+     margin: 30px 0;
+ }
+
+ .item-txt {
+     position: absolute;
+     left: 0;
+     right: 0;
+     bottom: 22%;
+ }
+
+ .item a {
+     margin: 0 auto 3.6% auto;
+     display: block;
+     max-width: 250px;
+ }
+
  form {
      padding: 0 5% 0 5%;
  }
 
-
-
- /* ----------------------------- for guestbook */
  article,
  article div,
  span {
@@ -163,15 +202,6 @@
      padding-top: 1.8em;
      flex-direction: row;
      justify-content: space-between;
- }
-
- span {
-     align-items: center;
- }
-
- /* removed styles on like button */
- span button {
-     all: unset;
  }
 
  article img {
@@ -195,15 +225,18 @@
      margin-top: 40px;
  }
 
+ .quote,
+ input,
+ textarea {
+     font-family: monospace;
+     font-style: italic;
+ }
+
  input,
  textarea {
      font-size: 150%;
      width: 100%;
      padding: 8px 8px 8px 15px;
- }
-
- input,
- textarea {
      margin: 12px 0 20px 0;
  }
 
@@ -213,40 +246,13 @@
      padding: 15px 50px;
  }
 
- /* ------------------------------------------------ end guestbook css */
-
-
- .quote,
- input,
- textarea {
-     font-family: monospace;
-     font-style: italic;
+ span {
+     align-items: center;
  }
 
- .item {
-     position: relative;
-     width: 50%;
-     margin: 5%;
-     padding: 2%;
-     box-shadow: 0 0 35px #555;
- }
-
- .item img {
-     max-width: 400px;
-     margin: 30px 0;
- }
-
- .item-txt {
-     position: absolute;
-     left: 0;
-     right: 0;
-     bottom: 22%;
- }
-
- .item a {
-     margin: auto;
-     display: block;
-     width: calc(100%/2);
+ /* remove default styles on (likes) button */
+ span button {
+     all: unset;
  }
 
  .foot-text {
@@ -257,10 +263,7 @@
      border-radius: 12px;
  }
 
- /* Button styling from W3 schools, modified slightly */
- /* Added scroll-behaviour: smooth; in css instead of using W3 Schools 'scroll to top' function */
  #topBtn {
-     display: none;
      position: fixed;
      bottom: 20px;
      right: 30px;
@@ -292,86 +295,22 @@
          padding: 5%;
      }
 
+     main nav a {
+         text-align: center;
+         display: block;
+         max-width: 225px;
+         margin: 0 auto;
+     }
+
      footer nav {
          width: 100%;
      }
  }
 
  @media screen and (max-width: 900px) {
-     footer nav {
-         width: 100%;
-     }
- }
-
-
- /* ------------------- GUESTBOOK STYLES ------------------------*/
- /* STYLES BELOW FROM WEEK 1 ASSIGNMENT, KEEPING DESIGN CONSISTENT */
- /*
-
- .item {
-     position: relative;
-     width: 50%;
-     margin: 12% 5%;
-     padding: 2%;
-     box-shadow: 0 0 35px #555;
- }
-
- .item img {
-     max-width: 400px;
-     margin: 30px 0;
- }
-
- .item-txt {
-     position: absolute;
-     left: 0;
-     right: 0;
-     bottom: 22%;
- }
-
- .item a {
-     margin: 0 auto 4% auto;
-     display: block;
-     max-width: 250px;
- }
-
- .foot-text {
-     margin: 3em 0 2em 0;
- }
-
- /* Button styling from W3 schools, modified slightly */
- /* Added scroll-behaviour: smooth; in css instead of using W3 Schools 'scroll to top' function */
- /*
- #topBtn {
-     position: fixed;
-     bottom: 20px;
-     right: 30px;
-     z-index: 99;
-     font-size: 18px;
-     border: none;
-     outline: none;
-     background-color: red;
-     color: white;
-     padding: 15px 25px;
-     border-radius: 10px;
- }
-
- #topBtn:hover {
-     background-color: #555;
- }
-
- @media screen and (max-width: 600px) {
-     header {
-         flex-direction: column;
-     }
-
-     h1,
-     h2 {
-         margin: 0 3% 1em 3%;
-     }
 
      .item {
-         width: 90%;
-         margin: 12% auto;
+         width: 75%;
          padding: 5%;
      }
 
@@ -379,9 +318,3 @@
          width: 100%;
      }
  }
-
- @media screen and (max-width: 900px) {
-     footer nav {
-         width: 100%;
-     }
- } */

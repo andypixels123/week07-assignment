@@ -16,7 +16,6 @@ import TopButton from "./components/TopButton";
 
 function App() {
 
-
   // ! top button ----------------------
   // todo: set state for top button?? is this the way to go?
   // const [btn, setBtn] = useState(false);
@@ -25,21 +24,17 @@ function App() {
   // const topBtn = document.getElementById("topBtn");
   // function scrollFunction() {// show / hide 'top' button
   //     if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
-  // ! conditional render??
   //         topBtn.style.display = "block";
   //     } else {
   //         topBtn.style.display = "none";
   //     }
   // }
   // window.onscroll = () => scrollFunction();
-  // ! end top button ------------------
-
 
   return (
     <>
       <BrowserRouter>
         <Header />
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/form" element={<Form />} />
