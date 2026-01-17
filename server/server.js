@@ -42,21 +42,28 @@ app.get("/getcomms", async function (req, res) {
 });
 
 // todo: update database with new like count
-// app.post("/likes", (req, res) => {
-//     try {
-//         const newLike = req.body.commLikes;
-//         const query = db.query(
-//             `UPDATE gbComms SET likes = $1 WHERE idx = $2`, [newLike.likeQty, newLike.likeId]
-//         );
-//         res.status(200).json({ request: "success" });
-//     } catch (error) {
-//         console.error(error, "Request failed");
-//         res.status(500).json({ request: "fail" });
-//     }
-// });
+app.post("/likes/:idx", async (req, res) => {
+    //n/r use line below instead, const postId = req.params.idx;
+    const { idx } = req.params;
+    try {
+        const { likes } = req.body;
+        const query = await db.query(
+            `UPDATE gbComms SET likes = likes + 1 WHERE idx = $1 RETURNING likes`, [idx]
+        );
+        if (query.rowCount === 0) {// fail
+            return res.status(404).json({ error: "post not found" });
+        } else {
+            return res.status(200).json({ request: "success" });
+        }
+        // res.json({ newCount: query.rows[0].likes });
+    } catch (error) {
+        console.error(error, "Request failed");
+        res.status(500).json({ message: "Server Error" });
+    }
+});
 
-// In Express.js, the app.listen() function is used to start a server and make it listen for incoming requests on a specified port and host. This method is essential for running an Express application as it enables the server to handle HTTP requests from clients (like browsers).
-
+// ! In Express.js, the app.listen() function is used to start a server and make it listen for incoming requests on a specified port and host.
+// ! This method is essential for running an Express application as it enables the server to handle HTTP requests from clients (like browsers).
 app.listen(PORT, () => {
     console.info(`Server running, port ${PORT}`);
 });
@@ -70,7 +77,7 @@ app.listen(PORT, () => {
 //     res.json({ message: "Welcome to the server API. GET comfy!" });
 // });
 
-// READ biscuits data
+// ! READ biscuits data
 // route --> http method GET
 // static route
 // app.get("/biscuits", async (req, res) => {
@@ -102,7 +109,7 @@ app.listen(PORT, () => {
 //     }
 // });
 
-// CREATE new entries in the biscuits table
+// ! CREATE new entries in the biscuits table
 // route --> http method POST
 // app.post("/new-biscuit", (req, res) => {
 //     try {
@@ -127,7 +134,7 @@ app.listen(PORT, () => {
 //     }
 // });
 
-// Delete one entry from the biscuits table
+// ! Delete one entry from the biscuits table
 // route --> http method delete
 // dynamic :id
 // app.delete("/delete-biscuit/:id", (req, res) => {
@@ -146,7 +153,7 @@ app.listen(PORT, () => {
 //     }
 // });
 
-// Update an entry in the biscuits table
+// ! Update an entry in the biscuits table
 // route --> http method PUT
 // dynamic :id
 // app.put("/update-biscuit/:id", (req, res) => {

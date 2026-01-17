@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, Fragment } from "react";
+import LikeButton from "./LikeButton";
 // import { Link } from "react-router"
 
 function Posts() {
@@ -14,7 +15,6 @@ function Posts() {
                 // "https://week07-assignment-jzhp.onrender.com.com/getcomms"
                 // );
                 const commData = await response.json();
-                // const jSon = JSON.stringify(commData);
                 console.log(commData);
                 setComms(commData);
             }
@@ -54,7 +54,7 @@ function Posts() {
     //     <p>comment</p>
     //     <div>
     //         <span>
-    //             <img src="likes-image" />
+    //             <img src="likes-icon.png" />
     //             <p>like count</p>
     //         </span>
     //         <p>Date / #2</p>
@@ -69,19 +69,20 @@ function Posts() {
                 {
                     comms.map((comm) => {
                         return (
-                            <>
+                            <Fragment key={comm.idx}>
                                 <article>
-                                    <h3 key={`a${comm.idx}`}>{comm.username}</h3>
-                                    <p key={`b${comm.idx}`}>{comm.comment}</p>
-                                    <div key={`c${comm.idx}`}>
-                                        <span key={`d${comm.idx}`}>
-                                            <img key={`e${comm.idx}`} src="" alt="like-logo" />
-                                            <p key={`f${comm.idx}`}>{comm.likes}</p>
-                                        </span>
-                                        <p key={`g${comm.idx}`}>{comm.date} / #{comm.idx}</p>
+                                    <h3>{comm.username}</h3>
+                                    <p>{comm.comment}</p>
+                                    <div>
+                                        {/* <span> */}
+                                            <LikeButton initialLikes={comm.likes} postId={comm.idx} />
+                                            {/* <img src="like-icon.png" alt="like-icon" /> */}
+                                            {/* <p>{comm.likes}</p> */}
+                                        {/* </span> */}
+                                        <p>{comm.date} / #{comm.idx}</p>
                                     </div>
                                 </article>
-                            </>
+                            </Fragment>
                         );
                     })
                 }

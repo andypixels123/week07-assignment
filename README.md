@@ -143,16 +143,20 @@ How to send your database schema:
     Take a screenshot of the tables you’ve used and save it in your files.
     On Moodle, in your submission, click the image icon and follow the instructions.
 
-
 ////////////////////////////////////////////////////////////////////////////////
- Failed to deploy server
- Render deployment error
+I had issues with deploying to Render, partly due to errors in the Moodle deployment instructions which were later updated.
+Render deployment error
+Failed to deploy server ==> Application exited early
+caused by app.listen() being commented out in my code by mistake!!
 
- ==> Application exited early
- caused by app.listen() being commented out by mistake!!
+Render Client deployment failed
+Removed package-lock.json, package.json and node_modules, ran npm i again, and npm update and successfully re-deployed.
 
- Required <HashLink> for return to top button to function using id="#top" also used on links without routes.
 
- Render Client deployment failed
- removed package-lock.json, ran npm i, npm update
- re-deployed
+References
+------------
+React Documentation -
+Researched and utilized <HashLink> for return to top button to function using id="#top" also used on page links without routes. Researched and utilized <Fragment> to add a unique key to a group of elements.
+
+YouTube -
+Tutorial on useEffect and adding custom error messages to html in React.
