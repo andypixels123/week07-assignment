@@ -1,5 +1,4 @@
-// ! done installed react-router-hash-link
-import { Link } from 'react-router';
+// import { Link } from 'react-router';
 import { HashLink } from 'react-router-hash-link';
 // <HashLink to="/path#top">Link to Top of Page</HashLink>
 
@@ -8,11 +7,6 @@ function Footer() {
         <>
             <footer>
                 <nav>
-
-                    {/* <Link to="/" className="round" title="cool page">home</Link>
-                    <Link to="/" className="round" title="email contact page">email</Link>
-                    <Link to="/" className="round" title="about us info">about</Link> */}
-
                     <HashLink to="#top" className="round" title="cool page">cOol</HashLink>
                     <HashLink to="#top" className="round" title="code page">coDe</HashLink>
                     <HashLink to="#top" className="round" title="group page">grOup</HashLink>
@@ -26,4 +20,4 @@ function Footer() {
     )
 }
 
-export default Footer
+export default Footer;

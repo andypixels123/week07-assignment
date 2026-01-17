@@ -64,9 +64,9 @@
  }
 
  article p:first-child {
+     padding: 0;
      font-size: 135%;
      font-weight: bold;
-     padding: 0;
  }
 
  img {

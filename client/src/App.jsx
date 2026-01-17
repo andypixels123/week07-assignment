@@ -3,8 +3,7 @@
 //in the components folder you have the minimum amount of components to make your app work, but I really recommend you make the most of the component system (props!!!!!)
 //it's not a requirement, but I think the users would like some conditional rendering to make the UI less cluttered...
 
-
-import { BrowserRouter, Routes, Route, Link } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router";
 // import { useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -15,8 +14,7 @@ import './App.css';
 import TopButton from "./components/TopButton";
 
 function App() {
-
-  // ! top button ----------------------
+  // ! top button / scroll ----------------------
   // todo: set state for top button?? is this the way to go?
   // const [btn, setBtn] = useState(false);
   // if 'true' -> style={{display:"block"}}, 'false' -> style={{display:"none"}}, set top button state??
@@ -48,4 +46,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

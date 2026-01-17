@@ -8,12 +8,8 @@ function Posts() {
         try {
             async function getPosts() {
                 // todo: change to render 'server url' for deployment
-                const response = await fetch(
-                    "http://localhost:8080/getcomms"
-                );
-                // const response = await fetch(
-                // "https://week07-assignment-jzhp.onrender.com.com/getcomms"
-                // );
+                const response = await fetch("http://localhost:8080/getcomms");
+                // const response = await fetch("https://week07-assignment-jzhp.onrender.com.com/getcomms");
                 const commData = await response.json();
                 setComms(commData);
             }
@@ -54,4 +50,4 @@ function Posts() {
     )
 }
 
-export default Posts
+export default Posts;

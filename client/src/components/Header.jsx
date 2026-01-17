@@ -1,11 +1,8 @@
 
-// ! Link is not defined - error in DevTools
-// todo: use correct syntax for Link and style links?
 import { Link } from 'react-router';
 import { HashLink } from 'react-router-hash-link';
 
 function Header() {
-
     return (
         <>
             <header id="top">
@@ -23,4 +20,4 @@ function Header() {
     )
 }
 
-export default Header
+export default Header;

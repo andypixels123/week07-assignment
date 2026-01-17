@@ -16,12 +16,11 @@ function Form() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // console.log("The form values are", formValues);
+    // console.log("form values - ", formValues);
     // todo: change to render 'server url' for deployment
-    // todo: add date to comment post
     try {
       fetch("http://localhost:8080/addcomms", {
-        // fetch("https://week07-assignment-jzhp.onrender.com.com/addcomms", {
+      // fetch("https://week07-assignment-jzhp.onrender.com.com/addcomms", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
