@@ -17,7 +17,6 @@ const PORT = 8080;
 app.post("/addcomms", (req, res) => {
     try {
         const newComm = req.body.formValues;
-        // console.log(newComm);
         const query = db.query(
             `INSERT INTO gbComms (username, comment, date) VALUES ($1, $2, $3)`,
             [newComm.userName, newComm.userComment, newComm.date]
@@ -30,7 +29,7 @@ app.post("/addcomms", (req, res) => {
 });
 
 // todo: get data from database, send to client
-app.get("/getcomms", async function (req, res) {
+app.get("/getcomms", async (req, res) => {
     try {
         const comments = await db.query("SELECT * FROM gbComms ORDER BY idx DESC");
         res.json(comments.rows);
@@ -41,26 +40,59 @@ app.get("/getcomms", async function (req, res) {
     }
 });
 
+
+
+
 // todo: update database with new like count
 app.post("/likes/:idx", async (req, res) => {
-    //n/r use line below instead, const postId = req.params.idx;
-    const { idx } = req.params;
+
     try {
-        const { likes } = req.body;
+        const { idx } = req.params;
         const query = await db.query(
-            `UPDATE gbComms SET likes = likes + 1 WHERE idx = $1 RETURNING likes`, [idx]
+            `UPDATE gbComms SET likes = likes + 1 WHERE idx = $1`, [idx]
         );
         if (query.rowCount === 0) {// fail
             return res.status(404).json({ error: "post not found" });
         } else {
             return res.status(200).json({ request: "success" });
         }
-        // res.json({ newCount: query.rows[0].likes });
     } catch (error) {
         console.error(error, "Request failed");
         res.status(500).json({ message: "Server Error" });
     }
 });
+
+// todo: update database with new like count
+// app.post("/likes", (req, res) => {
+//     const newLike = req.body.commLikes;
+//     const query = db.query(
+//         `UPDATE gbComms SET likes = $1 WHERE idx = $2`, [newLike.likeQty, newLike.likeId]
+//     );
+//     res.json({ status: "success", values: newLike });
+// });
+
+// Express.js route using pg library
+// app.post('/api/posts/:id/like', async (req, res) => {
+//   const postId = req.params.id;
+//   try {
+//     const result = await pool.query(
+//       'UPDATE posts SET likes = likes + 1 WHERE id = $1 RETURNING likes',
+//       [postId]
+//     );
+
+//     if (result.rowCount === 0) {
+//       return res.status(404).json({ error: 'Post not found' });
+//     }
+
+//     res.json({ newCount: result.rows[0].likes });
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).send('Server Error');
+//   }
+// });
+
+
+
 
 // ! In Express.js, the app.listen() function is used to start a server and make it listen for incoming requests on a specified port and host.
 // ! This method is essential for running an Express application as it enables the server to handle HTTP requests from clients (like browsers).

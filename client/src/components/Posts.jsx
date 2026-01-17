@@ -15,7 +15,7 @@ function Posts() {
                 // "https://week07-assignment-jzhp.onrender.com.com/getcomms"
                 // );
                 const commData = await response.json();
-                console.log(commData);
+                // console.log(commData);
                 setComms(commData);
             }
             getPosts();
