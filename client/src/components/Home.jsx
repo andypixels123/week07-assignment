@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { HashLink } from 'react-router-hash-link';
 
 function Home() {
@@ -5,6 +6,11 @@ function Home() {
     return (
         <>
             <main>
+
+                <Link to="/form">guestbook form</Link>&nbsp;|&nbsp;
+                <Link to="/posts">guestbook comments</Link>
+
+
                 <h2>HOME</h2>
                 <section>
                     <div className="item round">
@@ -52,4 +58,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Home;

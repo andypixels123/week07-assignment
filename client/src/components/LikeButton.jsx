@@ -17,7 +17,6 @@ const LikeButton = ({ initialLikes, postId }) => {
             // fetch("http://localhost:8080/likes", {//localhost
             // fetch("https://week04-assignment-1-j3wt.onrender.com/likes", {// mk2
 
-
             await fetch(`http://localhost:8080/likes/${postId}`, {
                 method: "POST",
                 headers: {

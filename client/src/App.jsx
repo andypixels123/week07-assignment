@@ -39,8 +39,7 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
-        <Link to="/form">guestbook form</Link>&nbsp;|&nbsp;{/* todo: decide link/route */}
-        <Link to="/posts">guestbook comments</Link>{/* todo: decide link/route */}
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/form" element={<Form />} />

@@ -12,9 +12,8 @@ function Header() {
                 <h1>WHEN PIGS FLY</h1>
                 <nav>
                     <Link to="/" className="round" title="home page">home</Link>
-                    <HashLink to="#top" className="round" title="email contact page">email</HashLink>
+                    <Link to="/posts" className="round" title="guestbook comments">guestbook</Link>
                     <HashLink to="#top" className="round" title="about us info">about</HashLink>
-                    {/* <Link style={{ color: "green" }} to="/about">About</Link> &apos;&nbsp; */}
                 </nav>
             </header>
             <div className="tagline">
