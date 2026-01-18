@@ -5,20 +5,22 @@ import { Link } from "react-router"
 function Posts() {
     const [comms, setComms] = useState([]);
     useEffect(() => {
-        try {
-            async function getPosts() {
+        const getPosts = async () => {
+            try {
                 // todo: change to render 'server url' for deployment
                 // const response = await fetch("http://localhost:8080/getcomms");
                 const response = await fetch("https://week07-assignment-jzhp.onrender.com.com/getcomms");
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
                 const commData = await response.json();
                 setComms(commData);
+            } catch (error) {
+                console.error(error);
             }
-            getPosts();
-
-        } catch (error) {
-            console.error(error);
-        }
-    });
+        };
+        getPosts();
+    }, []);
 
     return (
         <main>
