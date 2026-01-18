@@ -143,6 +143,8 @@ How to send your database schema:
     Take a screenshot of the tables you’ve used and save it in your files.
     On Moodle, in your submission, click the image icon and follow the instructions.
 
+    
+
 ================================================================================
 MY REFLECTION ==================================================================
 ================================================================================
@@ -157,21 +159,38 @@ This was caused by app.listen() being commented out in my code, by mistake!!
 Render Client deployment also failed a number of times.
 I Googled for a solution and also with the help of Manny I needed to remove package-lock.json, package.json and node_modules. I ran 'npm install' again, and 'npm update' and successfully re-deployed.
 
+I had a few issues to begin with, mainly with server.js and database queries but figured it all out in the end with reference to previous workshop and demo code.
+
+I have included code to clear the form after submission by resetting the values of the state object. 
+I have also prevented multiple likes from being submitted on a single comment by disabling the button after one like is submitted.
+
+Google Ai was also used for some of the return to top button logic although I spent a long time with the conditional rendering of this button, (it just wouldn't disappear from the page!) only to find I had a duplicate of the button in the footer component! This meant that it was still showing when it should have been hidden. I replaced an if/else statement in the code generated with a ternary operator currently in use. I also referenced previous workshop code for conditional rendering just to confirm I was doing it right.
+
 
 References
 ------------
 React Documentation -
 Researched and utilized <HashLink> for return to top button to function using id="#top" also used on page links without routes. Researched and utilized <Fragment> to add a unique key to a group of elements which was necessary when using map().
 
-Google Ai
-----------
+Google Ai -
 I used Google Ai to help with the like button logic. It was helpful but the code returned needed modifying to suit my app. I changed the code to prevent the user from liking more than once on a comment also.
 
 YouTube -
 I watched a tutorial about useEffect and adding custom error messages to html in React.
 
-I had a few issues to begin with, mainly with server.js and database queries but figured it all out in the end with reference to previous workshop and demo code.
 
-Google Ai was also used for some of the return to top button logic although I spent a long time with the conditional rendering of this button, (it just wouldn't disappear from the page!) only to find I had a duplicate of the button in the footer component! This meant that it was still showing when it should have been hidden. I replaced an if/else statement in the code generated with the ternary operator currently in use. I also referenced previous workshop code for conditional rendering just to confirm I was doing it right.
 
+Stretch Goals
+--------------
+  🏹 Create dynamic pages using react-router. 
+  🏹 Add ‘like’ functionality on posts.
+
+I believe I have completed two stretch goals.
+I have created dynamic pages using react-router including my week 1 assignment as the home page, my week 4 assignment as the guestbook which has been split into two pages, one for the guestbook form and one to show the guestbook posts. This removed the need to poll for new database updates as they are shown the next time the posts page is rendered.
+
+I have incorporated like counts by using a dynamic route with the database id as the dynamic parameter. This matches the like with the corresponding comment in the database.
+
+
+Conclusion
+-----------
 Overall, this assignment went well and I feel I now have a better understanding of React and how it reacts!
