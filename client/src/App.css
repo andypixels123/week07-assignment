@@ -125,6 +125,10 @@
      margin-bottom: 50px;
  }
 
+ main {
+     padding: 0 4% 12% 4%;
+ }
+
  header a:hover,
  main nav a:hover {
      text-decoration: underline;
@@ -150,14 +154,13 @@
  }
 
  section {
-     padding: 0 2% 5% 2%;
      border-bottom: 1px solid #ddd;
  }
 
  .item {
+     max-width: 800px;
      position: relative;
-     width: 50%;
-     margin: 5% auto;
+     margin: 8% auto;
      padding: 3% 2% 2% 2%;
      box-shadow: 0 0 35px #555;
  }
@@ -178,10 +181,6 @@
      margin: 0 auto 3.6% auto;
      display: block;
      max-width: 250px;
- }
-
- form {
-     padding: 0 5% 0 5%;
  }
 
  article,
@@ -214,15 +213,19 @@
  article,
  #guestbookComms {
      max-width: 900px;
-     margin: 20px auto 0 auto;
- }
-
- form {
-     margin-bottom: 8%;
+     margin: auto;
  }
 
  article {
-     margin-top: 40px;
+     margin-top: 30px;
+ }
+
+ article:first-of-type {
+     margin-top: 10%;
+ }
+
+ form {
+    padding: 20px 5% 0 5%;
  }
 
  .quote,
@@ -242,7 +245,7 @@
 
  button {
      display: block;
-     margin: auto;
+     margin: 2% auto;
      padding: 15px 50px;
  }
 
@@ -281,6 +284,17 @@
      background-color: #555;
  }
 
+ @media screen and (max-width: 480px) {
+     h1 {
+         font-size: 180%;
+     }
+
+     h2,
+     h3 {
+         font-size: 150%;
+     }
+ }
+
  @media screen and (max-width: 600px) {
      header {
          flex-direction: column;
@@ -308,11 +322,6 @@
  }
 
  @media screen and (max-width: 900px) {
-
-     .item {
-         width: 75%;
-         padding: 5%;
-     }
 
      footer nav {
          width: 100%;

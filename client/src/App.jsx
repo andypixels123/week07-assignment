@@ -4,7 +4,8 @@
 //it's not a requirement, but I think the users would like some conditional rendering to make the UI less cluttered...
 
 import { BrowserRouter, Routes, Route } from "react-router";
-// import { useState } from "react";
+import { useState, useEffect } from 'react';
+import { HashLink } from 'react-router-hash-link';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -14,20 +15,18 @@ import './App.css';
 import TopButton from "./components/TopButton";
 
 function App() {
-  // ! top button / scroll ----------------------
-  // todo: set state for top button?? is this the way to go?
-  // const [btn, setBtn] = useState(false);
-  // if 'true' -> style={{display:"block"}}, 'false' -> style={{display:"none"}}, set top button state??
-  // conditional render??
-  // const topBtn = document.getElementById("topBtn");
-  // function scrollFunction() {// show / hide 'top' button
-  //     if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
-  //         topBtn.style.display = "block";
-  //     } else {
-  //         topBtn.style.display = "none";
-  //     }
-  // }
-  // window.onscroll = () => scrollFunction();
+  // todo: conditionally render top button based on 'isVisible' true or false
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    function handleScroll() {
+      window.scrollY > 300 ? setIsVisible(true) : setIsVisible(false);
+      // console.log(isVisible);
+    }
+    // add listener to document window
+    window.addEventListener("scroll", handleScroll);
+    // clean up listener when component unmounts, prevents memory leak
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
 
   return (
     <>
@@ -39,8 +38,7 @@ function App() {
           <Route path="/Posts" element={<Posts />} />
         </Routes>
         <Footer />
-        {/* conditionally render top button?? */}
-        <TopButton />
+        {isVisible && <TopButton />}
       </BrowserRouter>
     </>
   )

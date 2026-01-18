@@ -1,4 +1,3 @@
-// import { Link } from 'react-router';
 import { HashLink } from 'react-router-hash-link';
 // <HashLink to="/path#top">Link to Top of Page</HashLink>
 
@@ -15,7 +14,6 @@ function Footer() {
                 </nav>
                 <p className="foot-text">buiLt frOm eXperience. andRew birCh 2025</p>
             </footer>
-            <HashLink to="#top" id="topBtn" title="return to top">Top</HashLink>
         </>
     )
 }

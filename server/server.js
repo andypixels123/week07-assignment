@@ -19,10 +19,8 @@ app.post("/addcomms", (req, res) => {
             `INSERT INTO gbComms (username, comment, date) VALUES ($1, $2, $3)`,
             [newComm.userName, newComm.userComment, newComm.date]
         );
-        res.status(200).json({ request: "success" });
     } catch (error) {
         console.error(error, "Request failed");
-        res.status(500).json({ request: "fail" });
     }
 });
 
@@ -31,10 +29,8 @@ app.get("/getcomms", async (req, res) => {
     try {
         const comments = await db.query("SELECT * FROM gbComms ORDER BY idx DESC");
         res.json(comments.rows);
-        res.status(200).json({ request: "success" });
     } catch (error) {
         console.error(error, "Request failed");
-        res.status(500).json({ request: "fail" });
     }
 });
 
