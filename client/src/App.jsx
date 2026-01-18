@@ -5,7 +5,6 @@
 
 import { BrowserRouter, Routes, Route } from "react-router";
 import { useState, useEffect } from 'react';
-import { HashLink } from 'react-router-hash-link';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";

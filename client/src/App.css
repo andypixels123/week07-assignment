@@ -249,6 +249,10 @@
      padding: 15px 50px;
  }
 
+ [disabled] {
+    cursor: not-allowed;
+ }
+
  span {
      align-items: center;
  }

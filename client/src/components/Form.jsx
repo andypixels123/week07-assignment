@@ -19,8 +19,8 @@ function Form() {
     // console.log("form values - ", formValues);
     // todo: change to render 'server url' for deployment
     try {
-      fetch("http://localhost:8080/addcomms", {
-      // fetch("https://week07-assignment-jzhp.onrender.com.com/addcomms", {
+      // fetch("http://localhost:8080/addcomms", {
+      fetch("https://week07-assignment-jzhp.onrender.com.com/addcomms", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

@@ -147,11 +147,11 @@ How to send your database schema:
 MY REFLECTION ==================================================================
 ================================================================================
 
-I made use of my week 4 guestbook assignment as a template and modified all code into a React app. The database table was already populated with rows of data. The posts data was originally produced using Google AI to create generic website user comments.
+I made use of my week 4 guestbook assignment as a template and modified all code to create a React app. The database table was already populated with rows of data so I truncated the table and restarted the id count. I then used a seed.js file to re-populate the table. The posts data was originally produced using Google AI to create generic website user comments.
 
 I had issues with deploying to Render, partly due to errors in the Moodle deployment instructions which were later updated.
 I made several attempts before it worked.
-Render deployment error - Failed to deploy server, ==> Application exited early
+Render deployment error was - Failed to deploy server, ==> Application exited early
 This was caused by app.listen() being commented out in my code, by mistake!!
 
 Render Client deployment also failed a number of times.
@@ -163,5 +163,15 @@ References
 React Documentation -
 Researched and utilized <HashLink> for return to top button to function using id="#top" also used on page links without routes. Researched and utilized <Fragment> to add a unique key to a group of elements which was necessary when using map().
 
+Google Ai
+----------
+I used Google Ai to help with the like button logic. It was helpful but the code returned needed modifying to suit my app. I changed the code to prevent the user from liking more than once on a comment also.
+
 YouTube -
 I watched a tutorial about useEffect and adding custom error messages to html in React.
+
+I had a few issues to begin with, mainly with server.js and database queries but figured it all out in the end with reference to previous workshop and demo code.
+
+Google Ai was also used for some of the return to top button logic although I spent a long time with the conditional rendering of this button, (it just wouldn't disappear from the page!) only to find I had a duplicate of the button in the footer component! This meant that it was still showing when it should have been hidden. I replaced an if/else statement in the code generated with the ternary operator currently in use. I also referenced previous workshop code for conditional rendering just to confirm I was doing it right.
+
+Overall, this assignment went well and I feel I now have a better understanding of React and how it reacts!
