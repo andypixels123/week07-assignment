@@ -20,14 +20,13 @@ function Form() {
     // todo: change to render 'server url' for deployment
     try {
       // fetch("http://localhost:8080/addcomms", {
-      fetch("https://week07-assignment-jzhp.onrender.com.com/addcomms", {
+        fetch("https://week07-assignment-jzhp.onrender.com.com/addcomms", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({ formValues })
       });
-      console.log("success");
     } catch (error) {
       console.error(error);
     }

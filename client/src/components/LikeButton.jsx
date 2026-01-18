@@ -17,10 +17,10 @@ const LikeButton = ({ initialLikes, postId }) => {
             // todo: change to render 'server url' for deployment
             await fetch(`https://week07-assignment-jzhp.onrender.com/likes/${postId}`, {
                 // await fetch(`http://localhost:8080/likes/${postId}`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                method: "POST"
+                // headers: {
+                //     "Content-Type": "application/json"
+                // },
             });
         } catch (error) {
             console.error(error);
